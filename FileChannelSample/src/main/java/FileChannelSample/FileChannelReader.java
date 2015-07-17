@@ -27,13 +27,12 @@ public class FileChannelReader {
     	long size = channel.size();
     	
     	//2.从通道读取文件内容
-    	byte[] bytes = new byte[allocate];
+    	byte[] bytes;
     	ByteBuffer byteBuffer = ByteBuffer.allocate(allocate);
     	
     	//channel.read(ByteBuffer)方法就类似于inputStream.read(byte)
     	//每次read都将读取allocate个字节到ByteBuffer
-    	int len;
-    	while((len = channel.read(byteBuffer)) != -1){
+    	while(channel.read(byteBuffer) != -1){
     		//注意，先调用flip方法反转Buffer，再从Buffer读取数据
     		byteBuffer.flip();
     		
