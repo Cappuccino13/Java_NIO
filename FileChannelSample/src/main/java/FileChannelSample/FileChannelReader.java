@@ -157,7 +157,7 @@ public class FileChannelReader {
     		mappedByteBuffer.get(bytes);
     		
     		//打印文件内容，关闭打印速度会很快
-    		System.out.print(new String(bytes));
+//    		System.out.print(new String(bytes));
     	}
     	
     	//关闭文件和通道流

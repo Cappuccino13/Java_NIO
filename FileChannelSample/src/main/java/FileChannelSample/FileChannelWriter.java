@@ -53,7 +53,8 @@ public class FileChannelWriter {
 		
 		//关闭文件和通道流
 		channel.close();
-		fos.close();		
+		fos.close();	
+		System.out.println("Write file " + file.getName() + " Successfully!");
 	}
 	
 	/**
@@ -72,7 +73,8 @@ public class FileChannelWriter {
 		byte[] bytes = new byte[len];
 		bytes = greeting.getBytes();
 		bos.write(bytes);
-		bos.close();		
+		bos.close();	
+		System.out.println("Write file " + file.getName() + " Successfully!");
 	}
 	
 	/**
@@ -130,7 +132,7 @@ public class FileChannelWriter {
     	raf.close();	
     	
     	long end = System.currentTimeMillis();
-    	System.out.println(String.format("===>写2G文件耗时：%s毫秒", end - start));	
+    	System.out.println(String.format("===>写2G文件 " + fcFile.getName() + " 耗时：%s毫秒", end - start));	
     }
     
 	
@@ -183,6 +185,6 @@ public class FileChannelWriter {
     	raf.close();
     	
     	long end = System.currentTimeMillis();
-    	System.out.println(String.format("===>写2G文件耗时：%s毫秒", end - start));	   	
+    	System.out.println(String.format("===>写2G文件 " + mbFile.getName() + " 耗时：%s毫秒", end - start));	   	
     }    
 }
